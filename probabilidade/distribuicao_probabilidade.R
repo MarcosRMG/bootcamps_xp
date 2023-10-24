@@ -15,7 +15,7 @@
 # Ou seja, queremos encontrar a probabilidade de dois sucessos, em dez 
 # tentativas. Cuja probabilidade de sucesso em cada tentativa é 50% 
 
-dbinom (x = 2, size = 10, prob = 0.5)
+dbinom(x = 2, size = 10, prob = 0.5)
 #Onde:
 # x é o número de sucessos,
 # size é o número de tentativas,
@@ -43,7 +43,7 @@ hist(va_binomial) # A maior barra no histograma representa a quantidade
 #(probabilidade de nenhum cliente comprar) + (probabilidade de um cliente 
 # comprar) + probabilidade de dois cliente comprarem)
 #Formalizando: P(X<=2) = P(X=0) + P(X=1) + P(X=2)
-pbinom(q = 2,size = 10, prob = 0.5)
+pbinom(q = 2, size = 10, prob = 0.5)
 #A probabilidade de que até dois clientes comprem ao entrarem dez clientes, é de 5,48%
 ##################################
 #### DISTRIBUIÇÃO GEOMÉTRICA ####
@@ -51,7 +51,7 @@ pbinom(q = 2,size = 10, prob = 0.5)
 #Exemplo: Definindo como sucesso o cliente comprar, e supondo que a probabilidade de
 # sucesso é 50%.
 #Qual a probabilidade da primeira venda ocorrer quando o quinto cliente entrar na loja?
-dgeom(x = 5-1, prob = 0.5)
+dgeom(x = 5, prob = 0.5)
 #Onde:
 # x é o número de tentativas
 # prob é a probabilidade de sucessos
@@ -127,9 +127,10 @@ plot(va_poison)
 
 #P(X<=2600)
 probabilidade_ate_2600 <- pnorm(q = 2600, mean = 2500, sd =170 )
+probabilidade_ate_2600
 #P(X<=2400)
 probabilidade_ate_2400 <- pnorm(q = 2400, mean = 2500, sd =170 )
-
+probabilidade_ate_2400
 #P(X<=2600) - P(X<=2400)
 # probabilidade_ate_2600 - probabilidade_ate_2400
 #Podemos gerar 100 números aleatórios para uma distribuição normal com média 2500 e
@@ -151,6 +152,7 @@ hist(va_normal_padrao)
 #salário acima de 2.600 ?
 #Padronização
 z <- (2600-2500)/170
+z
 pnorm(z, mean = 0, sd = 1)
 #ou simplesmente
 pnorm(z)
@@ -189,3 +191,6 @@ hist(va_t)
 #Gera uma amostra aleatória de 1000 números seguindo uma distribuição qui-quadrado
 va_QuiQuadrado <- rchisq(1000,df = 3)
 hist(va_QuiQuadrado)
+
+va_quiquadrado_neg = rchisq(500, df = 1)
+hist(va_quiquadrado_neg)
