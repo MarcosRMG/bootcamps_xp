@@ -58,7 +58,7 @@ hist(dados$Preco)
 boxplot(dados$Preco)
 
 qqplot(x = scale(dados$Preco), y = dados$Preco)
-
+qqline(dados$Preco)
 shapiro.test(dados$Preco)
 #Estatisticas descritivas do preco
 summary(dados$Preco)
